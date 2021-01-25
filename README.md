@@ -30,7 +30,7 @@ I am using the SpaceX API: https://github.com/r-spacex/SpaceX-API
 ```
 ## Wireframes
 
-https://wireframe.cc/pro/pp/bce559483409941
+![Wireframe](https://user-images.githubusercontent.com/75932113/105767250-bc893e00-5f52-11eb-9bd5-6b65bdab487b.png)
 
 ### MVP/PostMVP
 
@@ -62,7 +62,7 @@ This schedule will be used to keep track of your progress throughout the week an
 
 ## Priority Matrix
 
-https://docs.google.com/presentation/d/1ZgNT4J1qAteVD6NO-dRScR-k32oZ1WpXsfRgTiXkOCo/edit?usp=sharing
+![ActionPriorityMatrix](https://user-images.githubusercontent.com/75932113/105766008-1ee13f00-5f51-11eb-9edb-0475b832ea1a.jpg)
 
 ## Timeframes
 
