@@ -4,7 +4,7 @@
 
 ## Project Description
 
-With this simple website, users will be able to easily see when the next SpaceX launch will take place. They will also be able to see past launches.
+With this simple app, users will be able to easily see when the next SpaceX launch will take place. They will also be able to see past launches.
 
 ## API and Data Sample
 
