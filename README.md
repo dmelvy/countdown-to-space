@@ -68,14 +68,14 @@ This schedule will be used to keep track of your progress throughout the week an
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Set up basic app HTML structure | H | 4hrs| hrs | hrs |
+| Set up basic app HTML structure | H | 4hrs| 2hrs | hrs |
 | Creating first HTML container | H | 3hrs| hrs | hrs |
 | Creating second HTML container | H | 3hrs| hrs | hrs |
-| Setting up JS for upcoming launch data | H | 5hrs| hrs | hrs |
-| Setting up JS for previous launch data | H | 5hrs| hrs | hrs |
+| Setting up JS for upcoming launch data | H | 5hrs| 2hrs | hrs |
+| Setting up JS for previous launch data | H | 5hrs| 2hrs | hrs |
 | Creating sticky header navigation | H | 3hrs| hrs | hrs |
 | Creating buttons to navigate to other sections | H | 3hrs| hrs | hrs |
-| Add basic CSS styling (font styles, element styling, colors) | H | 6hrs| hrs | hrs |
+| Add basic CSS styling (font styles, element styling, colors) | H | 6hrs| 2hrs | hrs |
 | Add advanced CSS styling (animations, gradients, etc.) | H | 8hrs| hrs | hrs |
 | Total | H | 40hrs| hrs | hrs |
 
