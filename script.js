@@ -45,21 +45,23 @@ async function showPastData() {
     let pastData = await axios.get(`https://api.spacexdata.com/v4/launches/past`);
 
     // console.log(pastData)
-     
-    pastData.data.forEach(rocket => {
 
-        const oldLaunchInfo = `
+    let results = pastData.data.splice(0, 5)
+     
+    results.forEach(rocket => {
+
+      const oldLaunchInfo = document.createElement('div')
+      oldLaunchInfo.innerHTML = `
         <h2>Name: ${rocket.name}</h2>
         <h3>Launch Date: ${rocket.date_utc}</h3> 
         <img src = ${rocket.links.patch.small}>
         <p>Launch Details: ${rocket.details}</p>
         ` 
-      let pastContainer = document.querySelector('.old-launch')
-      pastContainer.insertAdjacentHTML('beforeend', oldLaunchInfo)
+      let pastContainer = document.querySelector('.old-container')
+      pastContainer.append(oldLaunchInfo)
 
       return oldLaunchInfo 
       
-
       
     })
   

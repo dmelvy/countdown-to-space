@@ -4,16 +4,36 @@ nav {
 
 h1 {
   color: white;
+ 
 }
 
 body {
   background-image: url('https://i.pinimg.com/originals/0a/f3/15/0af315655ca737cae091bc644d096e66.jpg');
-  background-size: contain;
+  background-size: cover;
   color: white;
   text-align: center;
 }
 
-img {
-  height: 20%;
-  width: 20%;
+section {
+  margin: 50px;
+  border-style: dashed;
+  border-color: white;
 }
+
+img {
+  height: 50px;
+}
+
+.old-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+div {
+  height: 390px;
+  width: 200px;
+  
+}
+
