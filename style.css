@@ -2,6 +2,17 @@ nav {
   text-align: right;
 }
 
+a {
+  color: white;
+  padding: 8px;
+  text-decoration: none;
+ 
+}
+
+a:hover {
+  color: blueviolet;
+}
+
 h1 {
   color: white;
  
@@ -12,6 +23,7 @@ body {
   background-size: cover;
   color: white;
   text-align: center;
+  font-family: 'Space Mono', monospace;
 }
 
 section {
