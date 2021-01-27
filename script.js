@@ -22,20 +22,52 @@ getNextLaunch()
 
 const showLaunchData = (upcomingData) => {
 
+// ***** COUNTDOWN CODE GOES HERE ****** // 
+  let countDownDate = new Date(`${upcomingData.date_utc}`).getTime();
+
+  let timer = setInterval(() => {
+    
+    let today = new Date().getTime();
+    let timeleft = countDownDate - today;
+
+    let days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
+    let hours = Math.floor((timeleft %  (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    let minutes = Math.floor((timeleft %  (1000 * 60 * 60)) / (1000 * 60));
+    let seconds = Math.floor((timeleft % (1000 * 60)) / (1000));
+    
+
+    document.getElementById("days").innerHTML = days + "days"
+    document.getElementById("hours").innerHTML = hours + "hours"
+    document.getElementById("minutes").innerHTML = minutes + "minutes"
+    document.getElementById("seconds").innerHTML = seconds + "seconds"
+
+    if (timeleft < 0) {
+      clearInterval(timer);
+      document.getElementById("days").innerHTML = ""
+    document.getElementById("hours").innerHTML = ""
+    document.getElementById("minutes").innerHTML = ""
+    document.getElementById("seconds").innerHTML = "NOW!"
+    }
+  
+});
+
+  // ***** NEXT LAUNCH DATA HERE ******* // 
+  
     const newLaunchInfo = `
-    <h1>${upcomingData.date_utc}</h1> 
     <img src = ${upcomingData.links.patch.small}/>
     <h2>Name: ${upcomingData.name}</h2>
     <p>Launch Details: ${upcomingData.details}</p>
     ` 
-  let upcomingContainer = document.querySelector('.new-launch')
-  upcomingContainer.insertAdjacentHTML('beforeend', newLaunchInfo)
+    let upcomingContainer = document.querySelector('.new-launch')
+    upcomingContainer.insertAdjacentHTML('beforeend', newLaunchInfo)
 
   return newLaunchInfo 
   
 }
 
-// ********* PAST LAUNCH DATA GOES BELOW HERE ********** // 
+
+
+
 
 // ****** RENDER PREVIOUS LAUNCH DATA ******* //
 
@@ -43,27 +75,27 @@ async function showPastData() {
   
   try {
     let pastData = await axios.get(`https://api.spacexdata.com/v4/launches/past`);
-
+    
     // console.log(pastData)
 
     let results = pastData.data.splice(0, 5)
-     
-    results.forEach(rocket => {
+        
+        results.forEach(rocket => {
 
-      const oldLaunchInfo = document.createElement('div')
-      oldLaunchInfo.innerHTML = `
+          const oldLaunchInfo = document.createElement('div')
+        oldLaunchInfo.classList.add('old-rocket')
+        oldLaunchInfo.innerHTML = `
         <h2>Name: ${rocket.name}</h2>
         <h3>Launch Date: ${rocket.date_utc}</h3> 
         <img src = ${rocket.links.patch.small}>
         <p>Launch Details: ${rocket.details}</p>
-        ` 
-      let pastContainer = document.querySelector('.old-container')
-      pastContainer.append(oldLaunchInfo)
-
-      return oldLaunchInfo 
-      
-      
-    })
+        `
+          let pastContainer = document.querySelector('.old-launches')
+        pastContainer.append(oldLaunchInfo)  
+          
+      })
+    
+        //  return oldLaunchInfo 
   
   
   } catch (error) {
@@ -73,3 +105,32 @@ async function showPastData() {
 }
 
 showPastData();
+
+// ****** CREATING CAROUSEL FOR PAST MISSIONS ****** //
+
+const carouselSlide = document.querySelector('.old-launches')
+const carouselItems = document.querySelectorAll('div')
+
+const previous = document.querySelector('#previous')
+const next = document.querySelector('#next')
+
+let counter = 0;
+const size = carouselItems[0].clientWidth
+
+
+carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+
+next.addEventListener('click', (() => {
+  carouselSlide.style.transition = "transform 0.4s ease-in-out"
+  counter++;
+  carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+}))
+
+carouselSlide.addEventListener('transitionend', (() => {
+  if (counter === 4) {
+    carouselSlide.style.transition = "none";
+    counter = carouselItems.length - 2;
+  }
+}))
+
+// figured out transition code with the help of Dev Ed on YT
