@@ -14,8 +14,8 @@ a:hover {
 }
 
 *{
-  padding: 0px;
-  margin: 0px;
+  /* padding: 0px;
+  margin: 0px; */
   box-sizing: border-box;
 }
 
@@ -24,11 +24,15 @@ a:hover {
 
 h1 {
   color: white;
+  font-family: 'Press Start 2P', cursive;
  
 }
 
 body {
   background-image: url('https://i.pinimg.com/originals/0a/f3/15/0af315655ca737cae091bc644d096e66.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
   background-size: cover;
   color: white;
   text-align: center;
@@ -37,9 +41,12 @@ body {
 
 .new-launch {
   margin: 50px;
+  /* display: flex; */
+  align-items: center;
+  justify-content: space-around;
+  flex-flow: row wrap;
   border-style: dashed;
   border-color: white;
-  flex-wrap: wrap;
 }
 
 img {
@@ -47,6 +54,7 @@ img {
 }
 
 .carousel-container {
+  display: flex;
   width: 60%;
   border: 5px solid white;
   margin: auto;
@@ -61,25 +69,33 @@ img {
  
 }
 
-  /* display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
-  flex-wrap: wrap; */
+@media only screen and (min-width: 769px) and (max-width: 1281px) {
+  .carousel-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    overflow: visible;
+    width: 100%;
+  }
+
+  #next {
+    display: none;
+  }
+  
+}
 
 
 .old-rocket {
   position: relative;
-  padding: 0 15px;
+  padding: 0 8%;
   align-items: center;
-  height: 550px;
+  /* height: 550px; */
   margin: 0 auto;
   
 }
 
-/* p {
-  padding: 0 18px;
-  display: none;
-  overflow: hidden;
-} */
+
+ 
 
 

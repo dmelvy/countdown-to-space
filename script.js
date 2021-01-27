@@ -36,10 +36,10 @@ const showLaunchData = (upcomingData) => {
     let seconds = Math.floor((timeleft % (1000 * 60)) / (1000));
     
 
-    document.getElementById("days").innerHTML = days + "days"
-    document.getElementById("hours").innerHTML = hours + "hours"
-    document.getElementById("minutes").innerHTML = minutes + "minutes"
-    document.getElementById("seconds").innerHTML = seconds + "seconds"
+    document.getElementById("days").innerHTML = days + " days"
+    document.getElementById("hours").innerHTML = hours + " hours"
+    document.getElementById("minutes").innerHTML = minutes + " minutes"
+    document.getElementById("seconds").innerHTML = seconds + " seconds"
 
     if (timeleft < 0) {
       clearInterval(timer);
@@ -137,8 +137,8 @@ carouselSlide.addEventListener('transitionend', (() => {
   
 details.addEventListener("toggle", event => {
   if (details.open) {
-    /* the element was toggled open */
   } else {
-    /* the element was toggled closed */
   }
 });
+
+// ***** 

@@ -75,7 +75,7 @@ This schedule will be used to keep track of your progress throughout the week an
 | Setting up JS for previous launch data | H | 5hrs| 2hrs | hrs |
 | Creating sticky header navigation | H | 3hrs| hrs | hrs |
 | Creating buttons to navigate to other sections | H | 3hrs| hrs | hrs |
-| Add basic CSS styling (font styles, element styling, colors) | H | 6hrs| 2hrs | hrs |
+| Add basic CSS styling (font styles, element styling, colors) | H | 6hrs| 4hrs | hrs |
 | Add advanced CSS styling (animations, gradients, etc.) | H | 8hrs| hrs | hrs |
 | Total | H | 40hrs| hrs | hrs |
 
