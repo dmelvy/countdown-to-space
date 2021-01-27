@@ -74,13 +74,21 @@ img {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-around;
     align-items: center;
     overflow: visible;
     width: 100%;
+    position: relative;
   }
 
   #next {
     display: none;
+  }
+
+  .old-rocket {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
   }
   
 }
@@ -88,7 +96,7 @@ img {
 
 .old-rocket {
   position: relative;
-  padding: 0 8%;
+  padding: 0 10%;
   align-items: center;
   /* height: 550px; */
   margin: 0 auto;
