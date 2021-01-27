@@ -56,7 +56,7 @@ const showLaunchData = (upcomingData) => {
     const newLaunchInfo = `
     <img src = ${upcomingData.links.patch.small}/>
     <h2>Name: ${upcomingData.name}</h2>
-    <p>Launch Details: ${upcomingData.details}</p>
+    <details>Launch Details: ${upcomingData.details}</details>
     ` 
     let upcomingContainer = document.querySelector('.new-launch')
     upcomingContainer.insertAdjacentHTML('beforeend', newLaunchInfo)
@@ -64,8 +64,6 @@ const showLaunchData = (upcomingData) => {
   return newLaunchInfo 
   
 }
-
-
 
 
 
@@ -88,7 +86,7 @@ async function showPastData() {
         <h2>Name: ${rocket.name}</h2>
         <h3>Launch Date: ${rocket.date_utc}</h3> 
         <img src = ${rocket.links.patch.small}>
-        <p>Launch Details: ${rocket.details}</p>
+        <details>Mission Details: ${rocket.details}</details>
         `
           let pastContainer = document.querySelector('.old-launches')
         pastContainer.append(oldLaunchInfo)  
@@ -134,3 +132,13 @@ carouselSlide.addEventListener('transitionend', (() => {
 }))
 
 // figured out transition code with the help of Dev Ed on YT
+
+// ***** ADDING COLLAPSIBLE TOGGLE FOR LAUNCH DETAILS ***** //
+  
+details.addEventListener("toggle", event => {
+  if (details.open) {
+    /* the element was toggled open */
+  } else {
+    /* the element was toggled closed */
+  }
+});

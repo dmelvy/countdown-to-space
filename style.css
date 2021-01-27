@@ -39,6 +39,7 @@ body {
   margin: 50px;
   border-style: dashed;
   border-color: white;
+  flex-wrap: wrap;
 }
 
 img {
@@ -74,5 +75,11 @@ img {
   margin: 0 auto;
   
 }
+
+/* p {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+} */
 
 
