@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v2.0.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v2.0.1/mapbox-gl.css' rel='stylesheet' />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      #map {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        margin-top: 60px;
+      }
+
+      .marker {
+        background-image: url('mapbox-icon.png');
+        background-size: cover;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+
+      .mapboxgl-popup {
+        max-width: 200px;
+      }
+
+      .mapboxgl-popup-content {
+        text-align: center;
+        font-family: 'Open Sans', sans-serif;
+      }
+
+      header {
+        text-align: center;
+        position: fixed;
+        top: 0;
+        font-family: 'Space Mono', monospace;
+        
+      }
+
+      nav {
+        font-size: 30px;
+      }
+
+      a {
+        color: black;
+        padding: 20px;
+        text-decoration: none;
+        
+      }
+
+      a:hover {
+        font-weight: bold;
+        color: blueviolet;
+      }
+
+
+      body {
+        margin-top: 60px;
+      }
+      
+    </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="index.html#past">Past Missions</a>
+      <a href="stats.html">Latest Stats</a>
+      <a href="stats.html#crew">Crew</a>
+    </nav>
+  </header>
+
+<div id='map'></div>
+
+<script>
+
+mapboxgl.accessToken = 'pk.eyJ1IjoiZG1lbHZ5IiwiYSI6ImNra2hhbWxicjBieHUyb3JqYWJldjZsdm0ifQ.mqWe5yrSW6gIgixedkXcvQ';
+
+var map = new mapboxgl.Map({
+  container: 'map',
+  style: 'mapbox://styles/mapbox/light-v10',
+  center: [-96, 37.8],
+  zoom: 3
+});
+
+let geojson = {
+  type: 'FeatureCollection',
+  features: [{
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [-120.593, 34.644]
+    },
+    properties: {
+      title: 'Vandenberg Air Force Base',
+      description: 'California'
+    }
+  },
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [-80.577, 28.561]
+    },
+    properties: {
+      title: 'Cape Canaveral',
+      description: 'Florida'
+    }
+  },
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [-97.156, 25.997]
+    },
+    properties: {
+      title: 'Boca Chica Village',
+      description: 'Texas'
+    }
+  },
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [167.743, 9.047]
+    },
+    properties: {
+      title: 'Omelek Island',
+      description: 'Marshall Islands'
+    }
+  }]
+};
+
+// add markers to map
+geojson.features.forEach(function(marker) {
+
+// create a HTML element for each feature
+var el = document.createElement('div');
+el.className = 'marker';
+
+// make a marker for each feature and add to the map
+new mapboxgl.Marker(el)
+  .setLngLat(marker.geometry.coordinates)
+  .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+    .setHTML('<h3>' + marker.properties.title + '</h3><p>' + marker.properties.description + '</p>'))
+  .addTo(map);
+});
+
+// THIS CODE WAS SOURCED FROM MAPBOX
+
+
+
+</script>
+
+
+</body>
+</html>

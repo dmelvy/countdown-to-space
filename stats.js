@@ -5,12 +5,12 @@ const getStarlink = async () => {
 
   try {
     const response = await axios.get(url);
-    console.log(response.data.length)
+    // console.log(response.data.length)
     let numberSats = response.data.length
     
     const starlinkInfo = document.createElement('div')
     starlinkInfo.innerHTML = `
-    <h2>Satellites in orbit: ${numberSats}</h2>
+    <h2>Satellites in orbit:</h2> <h1>${numberSats}</h1>
     `
     let starlinkContainer = document.querySelector('.starlink')
     starlinkContainer.append(starlinkInfo)
@@ -22,37 +22,6 @@ const getStarlink = async () => {
   }
 }
 getStarlink()
-
-// *****  PULLING LAUNCHPAD DATA ******* //
-
-const getLaunchpads = async () => {
-  const url = `https://api.spacexdata.com/v4/launchpads`
-
-  try {
-    const res = await axios.get(url);
-    // console.log(res.data.length)
-    let numberPads = res.data.splice(0, 4)
-
-    // <h2>Number of Launchpads: ${pads.length}</h2>
-
-    numberPads.forEach(pads => {
-    
-    const launchpadInfo = document.createElement('div')
-    launchpadInfo.innerHTML = `
-    <h4>${pads.locality}, ${pads.region}</h4>
-    `
-    let launchpadContainer = document.querySelector('.launchpad')
-    launchpadContainer.append(launchpadInfo)
-
-      return res
-    })
-
-   } catch (error) {
-    console.log(error)
-  }
-}
-getLaunchpads()
-
 
 
 // ****** GET CREW MEMBER INFO ****** // 
@@ -82,3 +51,6 @@ const getCrew = async () => {
   }
 }
 getCrew()
+
+// ******* MAP WITH LAUNCHPADS ****** //
+
