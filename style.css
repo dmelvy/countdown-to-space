@@ -49,36 +49,74 @@ body {
   border-color: white;
 }
 
-img {
+.crew {
+  box-sizing: border-box;
+  border-style: dotted;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  height: 500px;
+}
+
+.new-launch img {
+  width: 50%;
+}
+
+.old-rocket img {
   height: 50px;
+}
+
+.crew img {
+  width: 50%;
+}
+
+.starlink img {
+  width: 50%;
 }
 
 .carousel-container {
   display: flex;
   width: 60%;
-  border: 5px solid white;
+  border: 1px solid white;
   margin: auto;
   overflow: hidden;
-  position: relative;
+  
 }
 
 .old-launches {
   display: flex;
   width: 100%;
-  position: relative;
+  
  
+}
+
+.old-rocket {
+  padding: 0 11%;
+ 
+  
 }
 
 @media only screen and (min-width: 769px) and (max-width: 1281px) {
   .carousel-container {
-    display: flex;
+    /* display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-    align-items: center;
-    overflow: visible;
-    width: 100%;
-    position: relative;
+    /* align-items: center; */
+    
+    width: 100%; 
+    
+  }
+
+  .old-launches {
+    display: flex;
+    /* flex-direction: row; */
+    /* flex-wrap: wrap; */
+    /* justify-content: space-around; */
+    overflow-x: scroll;
+    /* align-items: flex-start */
+    
+   
   }
 
   #next {
@@ -94,14 +132,7 @@ img {
 }
 
 
-.old-rocket {
-  position: relative;
-  padding: 0 10%;
-  align-items: center;
-  /* height: 550px; */
-  margin: 0 auto;
-  
-}
+
 
 
  

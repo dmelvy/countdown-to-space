@@ -113,10 +113,10 @@ const previous = document.querySelector('#previous')
 const next = document.querySelector('#next')
 
 let counter = 0;
-const size = carouselItems[0].clientWidth
+// const size = carouselItems[0].clientWidth + (carouselItems[0].clientWidth * .10)
+const size = carouselSlide.clientWidth
 
 
-carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
 
 next.addEventListener('click', (() => {
   carouselSlide.style.transition = "transform 0.4s ease-in-out"
@@ -127,18 +127,19 @@ next.addEventListener('click', (() => {
 carouselSlide.addEventListener('transitionend', (() => {
   if (counter === 4) {
     carouselSlide.style.transition = "none";
-    counter = carouselItems.length - 2;
+    counter = carouselItems.length - 3;
   }
 }))
 
 // figured out transition code with the help of Dev Ed on YT
 
 // ***** ADDING COLLAPSIBLE TOGGLE FOR LAUNCH DETAILS ***** //
+
+let details = document.querySelectorAll('details')
   
-details.addEventListener("toggle", event => {
+details.addEventListener("toggle", (() => {
   if (details.open) {
   } else {
   }
-});
+}))
 
-// ***** 
