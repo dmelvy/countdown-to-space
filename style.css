@@ -1,11 +1,13 @@
 header {
-  position: fixed;
-  top: 0;
+  background-color: rgb(7, 2, 29);
+  padding: 10px; 
+  text-align: left;
+  position: fixed; 
+  top: 0; 
+  width: 100%;
+  overflow: visible;
+  z-index: 9;
   
-}
-
-nav {
-  text-align: right;
 }
 
 a {
@@ -111,28 +113,61 @@ button {
 
 
 
-@media only screen and (min-width: 769px) and (max-width: 1281px) {
+@media only screen and (min-width: 768px){
+  header {
+    text-align: right;
+    padding: 10px;
+    justify-content: space-evenly;
+    background-color: rgb(2, 2, 53);
+    font-size: 20px;
+  }
+
+  main {
+    margin-top: 120px;
+  }
+
+  #past {
+    margin: 50px;
+  }
+
+  .starlink img {
+    width: 200px;
+  }
+  
   .carousel-container {
-    /* display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    /* align-items: center; */
+    width: 70%; 
     
-    width: 100%; 
+  }
+
+  .new-launch {
+    width: 70%;
+    margin: 0 auto;
     
+  }
+
+  .new-launch img {
+    width: 200px;
   }
 
   .old-launches {
     display: flex;
-    /* flex-direction: row; */
-    /* flex-wrap: wrap; */
-    /* justify-content: space-around; */
     overflow-x: scroll;
-    /* align-items: flex-start */
     
-   
   }
+
+  .crew {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    /* width: 500px; */
+    margin: 0 auto;
+  }
+
+  .crew img {
+    width: 200px;
+  }
+
 
   #next {
     display: none;
