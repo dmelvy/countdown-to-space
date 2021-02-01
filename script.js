@@ -113,7 +113,6 @@ const previous = document.querySelector('#previous')
 const next = document.querySelector('#next')
 
 let counter = 0;
-// const size = carouselItems[0].clientWidth + (carouselItems[0].clientWidth * .10)
 const size = carouselSlide.clientWidth
 
 

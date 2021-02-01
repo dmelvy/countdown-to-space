@@ -68,20 +68,48 @@ This schedule will be used to keep track of your progress throughout the week an
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Set up basic app HTML structure | H | 4hrs| 4hrs | hrs |
-| Creating first HTML container | H | 3hrs| 2hrs | hrs |
-| Creating second HTML container | H | 3hrs| 6.5hrs | hrs |
-| Setting up JS for upcoming launch data | H | 5hrs| 2hrs | hrs |
-| Setting up JS for previous launch data | H | 5hrs| 4hrs | hrs |
-| Creating sticky header navigation | H | 3hrs| 1.5hrs | hrs |
-| Creating buttons to navigate to other sections | H | 3hrs| 3hrs | hrs |
-| Add basic CSS styling (font styles, element styling, colors) | H | 6hrs| 2hrs | hrs |
-| Add advanced CSS styling (animations, gradients, etc.) | H | 8hrs| 4hrs | hrs |
-| Total | H | 40hrs| hrs | hrs |
+| Set up basic app HTML structure | H | 4hrs| 4hrs | 4hrs |
+| Creating first HTML container | H | 3hrs| 2hrs | 2hrs |
+| Creating second HTML container | H | 3hrs| 6.5hrs | 6.5hrs |
+| Setting up JS for upcoming launch data | H | 5hrs| 2hrs | 2hrs |
+| Setting up JS for previous launch data | H | 5hrs| 4hrs | 4hrs |
+| Creating sticky header navigation | H | 3hrs| 1.5hrs | 1.5hrs |
+| Creating buttons to navigate to other sections | H | 3hrs| 3hrs | 3hrs |
+| Add basic CSS styling (font styles, element styling, colors) | H | 6hrs| 2hrs | 4hrs |
+| Add advanced CSS styling (animations, gradients, etc.) | H | 8hrs| 4hrs | 10hrs |
+| Total | H | 40hrs| 37hrs | 37hrs |
 
 ## Code Snippet
 
-TBD
+During my project, I ran into the problem of having too many results for "SpaceX past missions" which the API did not allow for easy pagination. Since I wanted to optimize my project for mobile, I needed a user-friendly solution that worked for smaller devices. 
+
+Besides splicing the results, below is the code that I learned to implement for a mobile gallery view. 
+
+```
+const carouselSlide = document.querySelector('.old-launches')
+const carouselItems = document.querySelectorAll('div')
+
+const previous = document.querySelector('#previous')
+const next = document.querySelector('#next')
+
+let counter = 0;
+const size = carouselSlide.clientWidth
+
+
+
+next.addEventListener('click', (() => {
+  carouselSlide.style.transition = "transform 0.4s ease-in-out"
+  counter++;
+  carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+}))
+
+carouselSlide.addEventListener('transitionend', (() => {
+  if (counter === 4) {
+    carouselSlide.style.transition = "none";
+    counter = carouselItems.length - 3;
+  }
+}))
+```
 
 ## Change Log
- Use this section to document what changes were made and the reasoning behind those changes.
+
