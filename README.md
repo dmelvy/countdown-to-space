@@ -4,7 +4,7 @@
 
 ## Project Description
 
-With this simple app, users will be able to easily see when the next SpaceX launch will take place. They will also be able to see past launches.
+With this simple app, users will be able to conveniently see SpaceX data and updates all in one place, including a countdown to when the next SpaceX launch will take place. No more combing through news articles and lengthy text!
 
 ## API and Data Sample
 
@@ -49,16 +49,14 @@ I am using the SpaceX API: https://github.com/r-spacex/SpaceX-API
 
 ## Project Schedule
 
-This schedule will be used to keep track of your progress throughout the week and align with our expectations.  
-
 |  Day | Deliverable | Status
 |---|---| ---|
-|Jan 25-26| Prompt / Wireframes / Priority Matrix / Timeframes | Incomplete
-|Jan 26| Project Approval | Incomplete
-|Jan 27| Connect API and render data in HTML containers | Incomplete
-|Jan 28| Create HTML architecture, including navigation | Incomplete
-|Jan 29| Finalize MVP with basic CSS styling | Incomplete
-|Feb 1| Presentations/Project Submission | Incomplete
+|Jan 25-26| Prompt / Wireframes / Priority Matrix / Timeframes | Complete
+|Jan 26| Project Approval | Complete
+|Jan 27| Connect API and render data in HTML containers | Complete
+|Jan 28| Create HTML architecture, including navigation | Complete
+|Jan 29| Finalize MVP with basic CSS styling | Complete
+|Feb 1| Presentations/Project Submission | Complete
 
 ## Priority Matrix
 
@@ -81,7 +79,7 @@ This schedule will be used to keep track of your progress throughout the week an
 
 ## Code Snippet
 
-During my project, I ran into the problem of having too many results for "SpaceX past missions" which the API did not allow for easy pagination. Since I wanted to optimize my project for mobile, I needed a user-friendly solution that worked for smaller devices. 
+During this project, I ran into the problem of having too many results for "SpaceX past missions" which the API did not allow for easy pagination. Since I wanted to optimize my project for mobile, I needed a user-friendly solution that worked for smaller devices. 
 
 Besides splicing the results, below is the code that I learned to implement for a mobile gallery view. 
 
@@ -94,8 +92,6 @@ const next = document.querySelector('#next')
 
 let counter = 0;
 const size = carouselSlide.clientWidth
-
-
 
 next.addEventListener('click', (() => {
   carouselSlide.style.transition = "transform 0.4s ease-in-out"
@@ -113,3 +109,4 @@ carouselSlide.addEventListener('transitionend', (() => {
 
 ## Change Log
 
+None

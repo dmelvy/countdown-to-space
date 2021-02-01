@@ -5,7 +5,6 @@ const getStarlink = async () => {
 
   try {
     const response = await axios.get(url);
-    // console.log(response.data.length)
     let numberSats = response.data.length
     
     const starlinkInfo = document.createElement('div')
@@ -51,6 +50,4 @@ const getCrew = async () => {
   }
 }
 getCrew()
-
-// ******* MAP WITH LAUNCHPADS ****** //
 

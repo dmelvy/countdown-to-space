@@ -7,7 +7,6 @@ const getNextLaunch = async () => {
     const response = await axios.get(url);
     
     upcomingData = response.data[0]
-    // console.log(upcoming)
     showLaunchData(upcomingData)
   
   return response
@@ -73,14 +72,11 @@ async function showPastData() {
   
   try {
     let pastData = await axios.get(`https://api.spacexdata.com/v4/launches/past`);
-    
-    // console.log(pastData)
-
     let results = pastData.data.splice(0, 5)
         
         results.forEach(rocket => {
 
-          const oldLaunchInfo = document.createElement('div')
+        const oldLaunchInfo = document.createElement('div')
         oldLaunchInfo.classList.add('old-rocket')
         oldLaunchInfo.innerHTML = `
         <h2>Name: ${rocket.name}</h2>
@@ -93,7 +89,7 @@ async function showPastData() {
           
       })
     
-        //  return oldLaunchInfo 
+        
   
   
   } catch (error) {
